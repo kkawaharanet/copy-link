@@ -1,5 +1,5 @@
 import React, { createContext } from "react";
-import { ILinkService, useLinkService } from "./link-service";
+import { type ILinkService, useLinkService } from "./link-service";
 
 const defaultLinkService: ILinkService = {
   link: { title: "", url: "" },

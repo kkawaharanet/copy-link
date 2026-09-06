@@ -1,7 +1,10 @@
-import { Link } from "@/link/link";
+import type { Link } from "@/link/link";
 import { linkToString } from "@/link/link-format";
-import { LINK_TYPES, LinkType } from "@/link/link-type";
-import { DEFAULT_PREFERENCES, Preferences } from "@/preferences/preferences";
+import { LINK_TYPES, type LinkType } from "@/link/link-type";
+import {
+  DEFAULT_PREFERENCES,
+  type Preferences,
+} from "@/preferences/preferences";
 
 async function copyToClipboard(tabId: number, text: string) {
   await browser.scripting.executeScript({
@@ -68,7 +71,7 @@ export default defineBackground(() => {
           document.querySelectorAll("a[href]"),
         ) as HTMLAnchorElement[];
         const anchor = anchors.find((a) => a.href === url);
-        return anchor ? anchor.innerText.trim() : "";
+        return anchor ? anchor.innerText.replaceAll("\n", "").trim() : ""; // 前後の空白と改行を取り除く
       },
       args: [linkUrl],
     });

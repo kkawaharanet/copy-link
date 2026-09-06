@@ -1,9 +1,9 @@
-import { Link } from "@/link/link";
+import type { Link } from "@/link/link";
 import { linkToString } from "@/link/link-format";
 import { getLinksInTab } from "@/link/link-functions";
-import { LINK_TYPES, LinkType } from "@/link/link-type";
+import { LINK_TYPES, type LinkType } from "@/link/link-type";
 import { PreferencesServiceContext } from "@/preferences/PreferencesServiceProvider";
-import { ChangeEvent, use } from "react";
+import { type ChangeEvent, use } from "react";
 import styles from "./App.module.css";
 
 function handleFocus(event: React.FocusEvent<HTMLTextAreaElement>) {

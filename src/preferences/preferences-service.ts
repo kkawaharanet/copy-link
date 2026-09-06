@@ -1,6 +1,6 @@
 import { storage } from "@wxt-dev/storage";
 import { use } from "react";
-import { DEFAULT_PREFERENCES, Preferences } from "./preferences";
+import { DEFAULT_PREFERENCES, type Preferences } from "./preferences";
 
 const preferencesItem = storage.defineItem<Preferences>("local:preferences", {
   fallback: DEFAULT_PREFERENCES,

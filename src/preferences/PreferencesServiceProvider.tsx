@@ -1,6 +1,6 @@
 import React, { createContext } from "react";
 import { DEFAULT_PREFERENCES } from "./preferences";
-import { IPreferencesService, usePreferencesService } from "./preferences-service";
+import { type IPreferencesService, usePreferencesService } from "./preferences-service";
 
 const defaultPreferencesService: IPreferencesService = {
   preferences: DEFAULT_PREFERENCES,

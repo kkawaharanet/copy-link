@@ -1,11 +1,12 @@
-import { Link } from "./link";
+import type { Link } from "./link";
 
 export async function getActiveTab(): Promise<Browser.tabs.Tab> {
   const tabs = await browser.tabs.query({ active: true, currentWindow: true });
-  if (tabs.length === 0) {
+  const tab = tabs[0];
+  if (!tab) {
     throw new Error("Failed to get active tab id");
   }
-  return tabs[0];
+  return tab;
 }
 
 export async function getLink(): Promise<Link> {
@@ -29,5 +30,5 @@ export async function getLinksInTab(): Promise<Link[]> {
         }));
     },
   });
-  return results[0].result!;
+  return results[0]?.result ?? [];
 }

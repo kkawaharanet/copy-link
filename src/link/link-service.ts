@@ -1,5 +1,5 @@
 import { use } from "react";
-import { Link } from "./link";
+import type { Link } from "./link";
 import { getLink } from "./link-functions";
 
 const linkPromise = getLink();

@@ -1,5 +1,5 @@
-import { Link } from "./link";
-import { LinkType } from "./link-type";
+import type { Link } from "./link";
+import type { LinkType } from "./link-type";
 
 export function toQueryParametersRemovedUrl(url: string): string {
   try {

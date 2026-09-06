@@ -1,4 +1,4 @@
-import { LinkType } from "@/link/link-type";
+import type { LinkType } from "@/link/link-type";
 
 export interface Preferences {
   linkType: LinkType;
